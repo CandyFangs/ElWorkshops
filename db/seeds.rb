@@ -24,6 +24,13 @@ movies.take(200).each do |movie|
   tags = movie['tags'].map {|tag| tag['name']}
   description = movie['description']
 
+  
+
   # Here you can use variables
-  Movie.create!(title: title, poster: cover_url, description: description, year: year)
+  Movie.create!(
+  	title: title, 
+  	poster: cover_url, 
+  	description: description, 
+  	year: year
+  	)
 end
