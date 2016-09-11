@@ -5,7 +5,6 @@ class CreateMovies < ActiveRecord::Migration
       t.text :description
       t.integer :year
       t.timestamps null: false
-      t.string :poster
     end
   end
 end
