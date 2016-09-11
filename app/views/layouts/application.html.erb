@@ -15,10 +15,20 @@
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="dropdown menu" data-dropdown-menu>
-          <li class="menu-text">Site Title</li>
-          <li>
+          
+          <% if current_user.present? %>
 
-          <li><input type="search" placeholder="Search"></li>
+            <li>
+              <%= current_user.email %>
+            </li>
+            <li>
+              <%= link_to 'sign out', destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to 'sign in', new_user_session_path %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>

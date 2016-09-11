@@ -22,6 +22,6 @@ test:
 
 production:
   adapter: postgresql
-  database: FilmWeb_production
+  database: filmweb_production
   pool: 5
   timeout: 5000

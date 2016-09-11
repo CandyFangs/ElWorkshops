@@ -15,7 +15,7 @@ Movie.delete_all
 
 # Iterate through each of movie
 movies.take(200).each do |movie|
-	puts '.'
+	print '.'
   # Extract data about movie
   cover_url = movie['img']
   rating = movie['rating'].to_i
@@ -27,10 +27,18 @@ movies.take(200).each do |movie|
   
 
   # Here you can use variables
-  Movie.create!(
+  created_movie = Movie.create!(
   	title: title, 
   	poster: cover_url, 
   	description: description, 
   	year: year
   	)
+  created_movie.ratings << [
+    Rating.create(value: rand(1..10)),
+    Rating.create(value: rand(1..10)),
+    Rating.create(value: rand(1..10)),
+    Rating.create(value: rand(1..10))
+  ]
 end
+
+puts "Done!"

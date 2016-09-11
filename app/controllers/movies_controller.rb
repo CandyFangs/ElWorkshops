@@ -1,10 +1,10 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]  
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.where(year: params[:year]).paginate(page: params[:page], per_page: 10)
+    @movies = Movie.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /movies/1
