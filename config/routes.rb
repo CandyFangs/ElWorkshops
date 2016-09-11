@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/', to: 'main#index'
   get 'movies/search', to: 'movies#index'
   resources :movies
+  resources :ratings, only: [:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
