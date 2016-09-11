@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20160911110538) do
     t.integer  "year"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "poster"
   end
 
   create_table "ratings", force: :cascade do |t|
